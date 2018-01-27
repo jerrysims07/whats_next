@@ -11,24 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124195010) do
+ActiveRecord::Schema.define(version: 20180126215507) do
 
   create_table "chores", force: :cascade do |t|
     t.text     "name"
     t.integer  "frequency"
     t.date     "last_performed"
     t.integer  "priority"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "room_id"
+    t.decimal  "multiplier",     default: 1.0
   end
 
   add_index "chores", ["room_id"], name: "index_chores_on_room_id"
+
+  create_table "homes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
 
   create_table "rooms", force: :cascade do |t|
     t.text     "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "home_id"
   end
+
+  add_index "rooms", ["home_id"], name: "index_rooms_on_home_id"
 
 end

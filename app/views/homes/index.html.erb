@@ -1,0 +1,5 @@
+<h1>Choose your location:</h1>
+
+<% @homes.each do |h| %>
+  <%= link_to h.name, home_path(h) %>
+<% end %>
