@@ -14,6 +14,11 @@ FactoryBot.define do
     last_performed 1.day.ago
   end
 
+  trait :due_today do
+    frequency 2
+    last_performed (Date.today - 2.days)
+  end
+
   factory :undue_chore,   traits: [:undue]
   factory :due_chore,     traits: [ :due ]
 end

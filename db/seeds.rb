@@ -5,23 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Room.destroy_all
 Chore.destroy_all
+Room.destroy_all
+Home.destroy_all
+
+Home.create({ name: '2611 Essex' })
 
 Room.create([
-  { name: 'AirBnb' },
-  { name: 'Den' },
-  { name: 'Desk' },
-  { name: 'Dining Room' },
-  { name: 'Entry Way' },
-  { name: 'Girls Bathroom' },
-  { name: 'Girls Bedroom' },
-  { name: 'Hall Bathroom' },
-  { name: 'Kitchen' },
-  { name: 'Living Room' },
-  { name: 'Master Bathroom' },
-  { name: 'Master Bedroom' },
-  { name: 'Media Room' }
+  { name: 'AirBnb', home: Home.first },
+  { name: 'Den', home: Home.first },
+  { name: 'Desk', home: Home.first },
+  { name: 'Dining Room', home: Home.first },
+  { name: 'Entry Way', home: Home.first },
+  { name: 'Girls Bathroom', home: Home.first },
+  { name: 'Girls Bedroom', home: Home.first },
+  { name: 'Hall Bathroom', home: Home.first },
+  { name: 'Kitchen', home: Home.first },
+  { name: 'Living Room', home: Home.first },
+  { name: 'Master Bathroom', home: Home.first },
+  { name: 'Master Bedroom', home: Home.first },
+  { name: 'Media Room', home: Home.first }
 ])
 
 Chore.create([

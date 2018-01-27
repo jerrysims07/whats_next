@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Room, type: :model do
   describe 'associations:' do
     it { should have_many(:chores) }
+    it { should belong_to(:home) }
   end
 
   describe 'instance methods' do
