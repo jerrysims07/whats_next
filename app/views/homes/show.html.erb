@@ -1,8 +1,8 @@
 <h1><%= @home.name %></h1>
-<ol>
+<ul>
   <% @chores.each do |chore| %>
     <li>
-      <%= chore.room.name %> - <%= chore.name %>
+      <%= render "chore_tile", chore: chore %>
     </li>
   <% end %>
-</ol>
+</ul>
