@@ -1,8 +1,8 @@
-<h1><%= @home.name %></h1>
-  <div class="row">
-    <% @chores.each do |chore| %>
-          <div class="chore-tile container col-4" >
-            <%= render "chore_tile", chore: chore %>
-          </div>
-    <% end %>
-  </div>
+<%= render 'common/navbar' %>
+<div class="row">
+  <% @chores.each do |chore| %>
+        <div class="chore-tile container col-4" >
+          <%= render "chore_tile", chore: chore %>
+        </div>
+  <% end %>
+</div>

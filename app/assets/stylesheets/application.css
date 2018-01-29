@@ -32,16 +32,37 @@ li {
 	list-style: none;
 }
 
-li:first-child {
+.nav-item {
+	margin: auto;
+	float: left;
+	display: inline-block;
+}
+
+.nav-link {
+	width: 100%;
+	margin: auto;
+}
+
+.nav-links {
+	width: 100%;
+	margin: auto;
+}
+
+.chore-details-row {
+	width: 100%;
+	margin: auto;
+}
+
+/* li:first-child {
 	font-size: 20px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 200;
 	line-height: 26.4px;
-}
+} */
 
-li:nth-child(even) {background: #CCC}
-li:nth-child(odd) {background: #FFF}
+/* li:nth-child(even) {background: #CCC}
+li:nth-child(odd) {background: #FFF} */
 
 
 .chore-tile {
