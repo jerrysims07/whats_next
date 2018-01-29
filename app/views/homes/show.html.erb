@@ -1,8 +1,8 @@
 <h1><%= @home.name %></h1>
-<ul>
-  <% @chores.each do |chore| %>
-    <li>
-      <%= render "chore_tile", chore: chore %>
-    </li>
-  <% end %>
-</ul>
+  <div class="row">
+    <% @chores.each do |chore| %>
+          <div class="chore-tile container col-4" >
+            <%= render "chore_tile", chore: chore %>
+          </div>
+    <% end %>
+  </div>

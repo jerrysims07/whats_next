@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   resources :homes
   resources :rooms
+  patch '/chores/:id', to: 'chores#update', as: 'update_chore'
+  get '/chores/dismiss_chore/:id', to: 'chores#dismiss_chore', as: 'dismiss_chore'
   resources :chores
   root to: 'homes#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
