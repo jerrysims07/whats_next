@@ -8,7 +8,7 @@ RSpec.describe Home, type: :model do
   describe 'instance methods' do
     describe '#current_chores' do
       let(:home) { create(:home) }
-      let(:room) { create(:room, home: home) }
+      let(:room) { create(:room, home_id: home.id) }
 
       context 'there are no chores at all for the house' do
         it 'should return an empty array' do
@@ -39,7 +39,7 @@ RSpec.describe Home, type: :model do
             end
 
             context 'in more than one room' do
-              let(:room2) { create(:room, home: home) }
+              let(:room2) { create(:room, home_id: home.id) }
               let!(:due_chore3) { create(:chore, :due, name: "Sweep floor", room: room2) }
 
               it 'should return an array with all due chores' do

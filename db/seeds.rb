@@ -48,7 +48,7 @@ Chore.create([
   room_id: Room.where(name: "Kitchen").first.id,
   name: "Wipe stove top",
   frequency: 4,
-  last_performed: Date.strptime("1/11/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 170,
   multiplier: 1.04
   },
@@ -56,7 +56,7 @@ Chore.create([
   room_id: Room.where(name: "Kitchen").first.id,
   name: "Wipe down counters",
   frequency: 1,
-  last_performed: Date.strptime("1/11/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 169,
   multiplier: 1.04
   },
@@ -64,7 +64,7 @@ Chore.create([
   room_id: Room.where(name: "Living Room").first.id,
   name: "Wipe away crumbs / fingerprints",
   frequency: 7,
-  last_performed: Date.strptime("1/11/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 167,
   multiplier: 1.01
   },
@@ -88,7 +88,7 @@ Chore.create([
   room_id: Room.where(name: "Living Room").first.id,
   name: "Neaten magazines, books, and games",
   frequency: 7,
-  last_performed: Date.strptime("1/10/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 159,
   multiplier: 1.01
   },
@@ -216,7 +216,7 @@ Chore.create([
   room_id: Room.where(name: "Living Room").first.id,
   name: "Clean glass surfaces",
   frequency: 7,
-  last_performed: Date.strptime("1/11/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 127,
   multiplier: 1.01
   },
@@ -224,7 +224,7 @@ Chore.create([
   room_id: Room.where(name: "Living Room").first.id,
   name: "Dust surfaces",
   frequency: 3,
-  last_performed: Date.strptime("1/11/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 126,
   multiplier: 1.02
   },
@@ -696,7 +696,7 @@ Chore.create([
   room_id: Room.where(name: "Desk").first.id,
   name: "Email for next 7 days guests",
   frequency: 1,
-  last_performed: Date.strptime("1/24/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/27/2018", "%m/%d/%Y"),
   priority: 200,
   multiplier: 1.25
   },
@@ -704,7 +704,7 @@ Chore.create([
   room_id: Room.where(name: "Desk").first.id,
   name: "Text picture to tomorrow's guest",
   frequency: 1,
-  last_performed: Date.strptime("1/24/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/27/2018", "%m/%d/%Y"),
   priority: 199,
   multiplier: 1.99
   },
@@ -712,7 +712,7 @@ Chore.create([
   room_id: Room.where(name: "Desk").first.id,
   name: "Email Inbox to Zero",
   frequency: 1,
-  last_performed: Date.strptime("1/24/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/27/2018", "%m/%d/%Y"),
   priority: 198,
   multiplier: 1.25
   },
@@ -720,7 +720,7 @@ Chore.create([
   room_id: Room.where(name: "Desk").first.id,
   name: "Physical inbox to BuJo",
   frequency: 1,
-  last_performed: Date.strptime("1/24/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 197,
   multiplier: 1.15
   },
@@ -728,7 +728,7 @@ Chore.create([
   room_id: Room.where(name: "Desk").first.id,
   name: "BuJo: Projects to Next Actions",
   frequency: 2,
-  last_performed: Date.strptime("1/23/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 196,
   multiplier: 1.10
   },
@@ -745,6 +745,14 @@ Chore.create([
   name: "Water plant",
   frequency: 5,
   last_performed: Date.strptime("1/23/2018", "%m/%d/%Y"),
+  priority: 194,
+  multiplier: 1.99
+  },
+  {
+  room_id: Room.where(name: "Den").first.id,
+  name: "Water plant",
+  frequency: 5,
+  last_performed: Date.strptime("1/16/2018", "%m/%d/%Y"),
   priority: 194,
   multiplier: 1.99
   },
@@ -776,7 +784,7 @@ Chore.create([
   room_id: Room.where(name: "Kitchen").first.id,
   name: "Empty sink of dirty dishes",
   frequency: 1,
-  last_performed: Date.strptime("1/24/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 190,
   multiplier: 1.85
   },
@@ -840,7 +848,7 @@ Chore.create([
   room_id: Room.where(name: "Desk").first.id,
   name: "Make to-do list for day",
   frequency: 1,
-  last_performed: Date.strptime("1/24/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 182,
   multiplier: 1.99
   },
@@ -848,7 +856,7 @@ Chore.create([
   room_id: Room.where(name: "Kitchen").first.id,
   name: "Empty Dishwasher",
   frequency: 1,
-  last_performed: Date.strptime("1/24/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 181,
   multiplier: 1.99
   },
@@ -856,7 +864,7 @@ Chore.create([
   room_id: Room.where(name: "Kitchen").first.id,
   name: "Collect clutter into neat pile",
   frequency: 1,
-  last_performed: Date.strptime("1/24/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 180,
   multiplier: 1.25
   },
@@ -880,7 +888,7 @@ Chore.create([
   room_id: Room.where(name: "Entry Way").first.id,
   name: "Wipe away crumbs / fingerprints",
   frequency: 11,
-  last_performed: Date.strptime("1/24/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 167,
   multiplier: 1.01
   },
@@ -912,7 +920,7 @@ Chore.create([
   room_id: Room.where(name: "Desk").first.id,
   name: "Pay all paper bills",
   frequency: 14,
-  last_performed: Date.strptime("1/12/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 172,
   multiplier: 1.05
   },
@@ -936,7 +944,7 @@ Chore.create([
   room_id: Room.where(name: "Desk").first.id,
   name: "Block days within 2 weeks",
   frequency: 4,
-  last_performed: Date.strptime("1/22/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 163,
   multiplier: 1.15
   },
@@ -944,7 +952,7 @@ Chore.create([
   room_id: Room.where(name: "Desk").first.id,
   name: "Check last 2 weeks of 6 months for pricing",
   frequency: 4,
-  last_performed: Date.strptime("1/22/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 162,
   multiplier: 1.15
   },
@@ -1000,7 +1008,7 @@ Chore.create([
   room_id: Room.where(name: "Desk").first.id,
   name: "Deposit checks",
   frequency: 14,
-  last_performed: Date.strptime("1/12/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 149,
   multiplier: 1.01
   },
@@ -1152,7 +1160,7 @@ Chore.create([
   room_id: Room.where(name: "Kitchen").first.id,
   name: "Quick scrub sink",
   frequency: 2,
-  last_performed: Date.strptime("1/24/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 107,
   multiplier: 1.03
   },
@@ -1176,7 +1184,7 @@ Chore.create([
   room_id: Room.where(name: "Entry Way").first.id,
   name: "Dust surfaces",
   frequency: 7,
-  last_performed: Date.strptime("1/24/2018", "%m/%d/%Y"),
+  last_performed: Date.strptime("1/26/2018", "%m/%d/%Y"),
   priority: 126,
   multiplier: 1.01
   },

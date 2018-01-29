@@ -1,5 +1,6 @@
 class Home < ActiveRecord::Base
   has_many :rooms
+  has_many :chores, through: :rooms
 
   def current_chores
     chores = []

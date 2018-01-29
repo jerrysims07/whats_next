@@ -1,0 +1,3 @@
+<% unless @chore.due? %>
+  $("#chore-tile-<%= @chore.id %>").closest('.chore-tile').remove();
+<% end %>
