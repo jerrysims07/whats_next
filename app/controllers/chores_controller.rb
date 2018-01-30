@@ -13,6 +13,10 @@ class ChoresController < ApplicationController
   def dismiss_chore
     @chore = Chore.find(params[:id])
   end
+
+  def meta
+    @chore = Chore.find(params[:id])
+  end
   private
 
   def chore_params

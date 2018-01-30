@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-7 card">
+    <%= form_for @chore do |f| %>
+      <div class="row">
+        <%= f.label :name, class: "col-6" %>
+        <%= f.text_field :name, class: "long-text-field col-6" %><br />
+      </div>
+      <div class="row">
+        <%= f.label :frequency, class: "col-6" %>
+        <%= f.number_field :frequency, class: "col-6" %><br />
+      </div>
+      <div class="row">
+        <%= f.label :last_performed, class: "col-6" %>
+        <%= f.text_field :last_performed, class: "col-6" %><br />
+      </div>
+      <div class="row">
+        <%= f.label :priority, class: "col-6" %>
+        <%= f.number_field :priority, class: "col-6" %><br />
+      </div>
+      <div class="row">
+        <%= f.label :room, class: "col-6" %>
+        <%= f.select :room_id, Room.all.map { |r| r.name }, class: "col-6" %><br />
+      </div>
+      <div class="row">
+        <%= f.label :multiplier, class: "col-6" %>
+        <%= f.text_field :multiplier, class: "col-6" %><br />
+      </div>
+        <%= f.submit "Update Chore", class: "form-submit col-12" %>
+    <% end %>
+  </div>
+  <div class="col-5 card">
+    <ul><h4> Priority for other chores in <%= @chore.room.name %>:</h4>
+      <% @chore.room.chores.select { |c| c != @chore }.each do |other_chore| %>
+        <li class="other-chore">
+          <%= other_chore.name %> - <%= other_chore.priority %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

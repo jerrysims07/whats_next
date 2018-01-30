@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/chores/dismiss_chore/:id', to: 'chores#dismiss_chore', as: 'dismiss_chore'
   resources :chores
   root to: 'homes#index'
+  get '/chores/meta/:id', to: 'chores#meta', as: 'chore_meta'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

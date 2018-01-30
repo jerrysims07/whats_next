@@ -8,4 +8,7 @@
   <div class="col-2">
     <%= link_to "Mark Complete", edit_chore_path(chore.id, chore: { last_performed: Date.today }), { remote:true, class: "btn btn-secondary" } %>
   </div>
+  <div class="col-1">
+    <%= link_to "Details", chore_meta_path(chore.id), class: "btn btn-secondary" %>
+  </div>
 </div>

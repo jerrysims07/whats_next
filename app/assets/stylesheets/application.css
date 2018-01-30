@@ -82,3 +82,43 @@ tr {
 	width: 100%;
 	margin: auto;
 }
+
+label {
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 250px;
+  text-align: right;
+	font-weight: bold;
+	font-style: italic;
+	padding-right: 7px;
+}
+
+.form-element {
+	height: 32px;
+}
+
+.form-submit {
+	margin-top: 12px;
+}
+
+input select {
+  display: inline-block;
+  float: left;
+}
+
+li.other-chore {
+  list-style: disc inside none;
+}
+
+li:nth-child(even) {
+	background-color: #eee;
+}
+
+li:nth-child(odd) {
+	background-color: #fff;
+}
+
+.long-text-field {
+	width: 50%;
+}
