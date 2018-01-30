@@ -111,12 +111,16 @@ li.other-chore {
   list-style: disc inside none;
 }
 
-li:nth-child(even) {
+li.other-chore:nth-child(even) {
 	background-color: #eee;
 }
 
-li:nth-child(odd) {
+li.other-chore:nth-child(odd) {
 	background-color: #fff;
+}
+
+.other-chore-link {
+	color: black
 }
 
 .long-text-field {

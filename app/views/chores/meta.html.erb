@@ -32,7 +32,7 @@
     <ul><h4> Priority for other chores in <%= @chore.room.name %>:</h4>
       <% @chore.room.chores.select { |c| c != @chore }.each do |other_chore| %>
         <li class="other-chore">
-          <%= other_chore.name %> - <%= other_chore.priority %>
+          <%= link_to other_chore.name, chore_meta_path(other_chore), class: 'other-chore-link' %> - <%= other_chore.priority %>
         </li>
       <% end %>
     </ul>
