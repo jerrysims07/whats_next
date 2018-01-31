@@ -15,7 +15,11 @@
  *= bootstrap-datepicker
  */
 * {
-	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+	font-family: "PT Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+}
+
+body {
+	background-image: url('/assets/vintage-concrete.png')
 }
 
 h1 {
@@ -69,7 +73,8 @@ li:nth-child(odd) {background: #FFF} */
 	width: 100%;
 	margin: auto;
 	text-align: center;
-	float: left
+	float: left;
+	opacity: .85;
 }
 
 tr {
@@ -92,6 +97,10 @@ label {
 	font-weight: bold;
 	font-style: italic;
 	padding-right: 7px;
+}
+
+.btn-group {
+	opactiy: 1;
 }
 
 .form-element {
@@ -119,7 +128,7 @@ li.other-chore:nth-child(odd) {
 	background-color: #fff;
 }
 
-.other-chore-link {
+.other-chore-link, .chore-meta-link{
 	color: black
 }
 

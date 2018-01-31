@@ -6,7 +6,8 @@
         <%= link_to "Show Rooms", room_path, class: 'nav-link' %>
       </li>
       <li class="nav-item col-6">
-        <%= link_to "All Current Chores", home_path, class: 'nav-link' %>
+        <!-- TO-DO: Currently, home_path is hardcoded with id=1. When we add support for more homes, this must change. -->
+        <%= link_to "All Current Chores", home_path(1), class: 'nav-link' %>
       </li>
     </div>
   </ul>
