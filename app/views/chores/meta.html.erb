@@ -20,7 +20,7 @@
       </div>
       <div class="row">
         <%= f.label :room, class: "col-6" %>
-        <%= f.select :room_id, Room.all.map { |r| r.name }, class: "col-6" %><br />
+        <%= f.select :room_id, Room.all.map { |r| [r.name, r.id] }, class: "col-6" %><br />
       </div>
       <div class="row">
         <%= f.label :multiplier, class: "col-6" %>

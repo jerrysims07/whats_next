@@ -1,6 +1,8 @@
 class Chore < ActiveRecord::Base
   belongs_to :room
 
+  validates :room_id, presence: true
+
   def days_overdue
     days_since_last_performed = (Date.today - last_performed).to_i
     days_since_last_performed > frequency ? (days_since_last_performed - frequency) : 0
