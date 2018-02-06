@@ -1,17 +1,17 @@
 <%= render 'common/navbar' %>
-<div class="row">
-  <table class="room-table">
-    <% @rooms.each do |room| %>
-      <% if room.current_chores.count > 0 %>
-        <tr class="row">
-          <td class="col-2"><%= room.name %></td>
-          <td class="col-10">
-            <div class="room-chore-list container" >
-              <%= render "room_chore_list_tile", room: room %>
-            </div>
-          </td>
-        </tr>
+  <div class="table-container container row">
+    <table class="col-7 col-md-offset-2">
+      <% @rooms.each do |room| %>
+        <% if room.current_chores.count > 0 %>
+          <tr class="row">
+            <td class="col-1"><%= room.name %></td>
+            <td class="col-11">
+              <div class="room-chore-list-container" >
+                <%= render "room_chore_list_tile", room: room %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-  </table>
+    </table>
 </div>

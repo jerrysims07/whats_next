@@ -83,11 +83,6 @@ tr {
 	border-width: thin;
 }
 
-.room-table {
-	width: 100%;
-	margin: auto;
-}
-
 label {
   display: inline-block;
   float: left;

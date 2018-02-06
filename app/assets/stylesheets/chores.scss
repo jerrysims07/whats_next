@@ -1,3 +1,47 @@
 // Place all the styles related to the Chores controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+p {
+  padding-top: 15px;
+}
+
+form label[for]:after {
+  content: ":";
+}
+
+form.edit_chore {
+  padding: 10px;
+}
+
+card {
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.chore-details-column {
+  float: left;
+  display: inline-block;
+}
+
+i {
+  float: left;
+  display: inline-block;
+}
+
+.btn-group {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+li.prereq-list-item {
+  list-style: disc inside none;
+}
+
+a.chore-meta-link {
+  text-align: left;
+}
+
+li.undue a, li.undue {
+  color: #bbb;
+}

@@ -9,6 +9,7 @@ class ChoresController < ApplicationController
     @chore = Chore.find(params[:id])
     @chore.update_attributes(chore_params)
     @chore.reload
+    redirect_to action: "meta", id: @chore.id
   end
 
   def dismiss_chore
@@ -17,6 +18,7 @@ class ChoresController < ApplicationController
 
   def meta
     @chore = Chore.find(params[:id])
+    @other_chores = @chore.room.chores.select { |c| c != @chore }.sort_by{ |c| -c.effective_priority }
   end
 
   private
