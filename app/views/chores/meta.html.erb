@@ -1,39 +1,55 @@
 <%= render 'common/navbar' %>
 <div class="row">
-  <div class="col-7 card">
-    <%= form_for @chore do |f| %>
-      <div class="row">
-        <%= f.label :name, class: "col-6" %>
-        <%= f.text_field :name, class: "long-text-field col-6" %><br />
-      </div>
-      <div class="row">
-        <%= f.label :frequency, class: "col-6" %>
-        <%= f.number_field :frequency, class: "col-6" %><br />
-      </div>
-      <div class="row">
-        <%= f.label :last_performed, class: "col-6" %>
-        <%= f.text_field :last_performed, class: "col-6" %><br />
-      </div>
-      <div class="row">
-        <%= f.label :priority, class: "col-6" %>
-        <%= f.number_field :priority, class: "col-6" %><br />
-      </div>
-      <div class="row">
-        <%= f.label :room, class: "col-6" %>
-        <%= f.select :room_id, Room.all.map { |r| [r.name, r.id] }, class: "col-6" %><br />
-      </div>
-      <div class="row">
-        <%= f.label :multiplier, class: "col-6" %>
-        <%= f.text_field :multiplier, class: "col-6" %><br />
-      </div>
-        <%= f.submit "Update Chore", class: "form-submit col-12" %>
-    <% end %>
+  <div class="col-6">
+    <div class="card col-9 col-md-offset-3">
+      <%= form_for @chore do |f| %>
+        <div class="row">
+          <%= f.label :name, class: "col-4" %>
+          <%= f.text_field :name, class: "long-text-field col-8" %><br />
+        </div>
+        <div class="row">
+          <%= f.label :frequency, class: "col-4" %>
+          <%= f.number_field :frequency, class: "col-8" %><br />
+        </div>
+        <div class="row">
+          <%= f.label :last_performed, class: "col-4" %>
+          <%= f.text_field :last_performed, class: "col-8" %><br />
+        </div>
+        <div class="row">
+          <%= f.label :priority, class: "col-4" %>
+          <%= f.number_field :priority, class: "col-8" %><br />
+        </div>
+        <div class="row">
+          <%= f.label :room, class: "col-4" %>
+          <%= f.select :room_id, Room.all.map { |r| [r.name, r.id] }, class: "col-8" %><br />
+        </div>
+        <div class="row">
+          <%= f.label :multiplier, class: "col-4" %>
+          <%= f.text_field :multiplier, class: "col-8" %><br />
+        </div>
+          <%= f.submit "Update Chore", class: "form-submit col-8 col-md-offset-4" %>
+      <% end %>
+    </div>
+    <p class="col-5 col-md-offset-6">Prequisites:
+      <% if @chore.prerequisites.empty? %>
+        None </p>
+      <% else %>
+    </p>
+        <ul class="col-5 col-md-offset-6 card">
+          <% @chore.prerequisites.each do |p| %>
+            <li class="prereq-list-item">
+              <%= p.name %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    <%= link_to glyph(:plus), new_prerequisite_path(chore: @chore), class: 'btn btn-sm col-md-offset-6 col-1' %>
   </div>
-  <div class="col-5 card">
+  <div class="col-6 card">
     <ul><h4> Priority for other chores in <%= @chore.room.name %>:</h4>
-      <% @chore.room.chores.select { |c| c != @chore }.each do |other_chore| %>
-        <li class="other-chore">
-          <%= link_to other_chore.name, chore_meta_path(other_chore), class: 'other-chore-link' %> - <%= other_chore.priority %>
+      <% @other_chores.each do |other_chore| %>
+        <li class="other-chore <%= 'undue' unless other_chore.due? %>">
+          <%= link_to other_chore.name, chore_meta_path(other_chore), class: 'other-chore-link' %> - <%= other_chore.effective_priority.truncate %>
         </li>
       <% end %>
     </ul>

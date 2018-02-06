@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126215507) do
+ActiveRecord::Schema.define(version: 20180201141825) do
+
+  create_table "chore_prerequisites", force: :cascade do |t|
+    t.integer "chore_id"
+    t.integer "prerequisite_id"
+  end
 
   create_table "chores", force: :cascade do |t|
     t.text     "name"

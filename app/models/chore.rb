@@ -1,5 +1,7 @@
 class Chore < ActiveRecord::Base
   belongs_to :room
+  has_many :chore_prerequisites
+  has_many :prerequisites, through: :chore_prerequisites
 
   validates :room_id, presence: true
 

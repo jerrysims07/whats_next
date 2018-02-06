@@ -1,6 +1,25 @@
 <div id="chore-tile-<%= chore.id %>" class="chore-tile card">
     <div class="card-body col-12">
-      <h5 class="card-title"> <%= link_to chore.name, chore_meta_path(chore), class: 'chore-meta-link' %> (<%= chore.room.name %>)</h5>
+      <% unless chore.prerequisites.empty? %>
+        <ul>
+          <% chore.prerequisites.each do |p| %>
+            <% if p.due? %>
+              <div class="row">
+                <li class="prereq-list-item col-12">
+                  <span><%= link_to p.name, chore_meta_path(p), class: "chore-meta-link" %></span>
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                    <%= link_to glyph(:ok), edit_chore_path(chore.id, chore: { last_performed: Date.today }), { remote:true, class: "btn btn-xs btn-secondary" } %>
+                    <%= link_to glyph(:remove), dismiss_chore_path(chore.id), { remote: true, class:"btn btn-xs btn-secondary" } %>
+                    <%= link_to glyph(:pencil), chore_meta_path(chore.id), class: 'btn btn-xs btn-secondary' %>
+                  </div>
+
+                </li>
+              </div>
+            <% end %>
+          <% end %>
+        </ul>
+      <% end %>
+      <h4 class="card-title"> <%= link_to chore.name, chore_meta_path(chore), class: 'chore-meta-link' %> (<%= chore.room.name %>)</h4>
       <p class="card-text">
         <div class="btn-group" role="group" aria-label="Basic example">
           <%= link_to glyph(:ok), edit_chore_path(chore.id, chore: { last_performed: Date.today }), { remote:true, class: "btn btn-secondary" } %>

@@ -1,0 +1,18 @@
+h4, h3 {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 8px;
+}
+
+.new-prerequisites-form {
+  label {
+    display: inline-block;
+  }
+  input {
+    display: inline-block;
+  }
+}
+
+form.new-prerequisites-form label[for]:after {
+  content: none;
+}

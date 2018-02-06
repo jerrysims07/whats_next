@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  root to: 'homes#index'
+
   resources :homes
   resources :rooms
+
   patch '/chores/:id', to: 'chores#update', as: 'update_chore'
   get '/chores/dismiss_chore/:id', to: 'chores#dismiss_chore', as: 'dismiss_chore'
-  resources :chores
-  root to: 'homes#index'
   get '/chores/meta/:id', to: 'chores#meta', as: 'chore_meta'
+  resources :chores
+
+  get '/chore_prerequisites/new', to: 'chore_prerequisites#new', as: 'new_prerequisite'
+  post '/chore_prerequisites/new', to: 'chore_prerequisites#create', as: 'create_prerequisite'
+  get '/chore_prerequisites/show', to: 'chore_prerequisites#show', as: 'chore_prerequisite'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

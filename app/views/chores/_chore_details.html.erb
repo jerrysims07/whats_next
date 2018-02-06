@@ -1,14 +1,13 @@
-<div class="row chore-details-row">
-  <div class="col-4">
-    <%= chore.name %>
+<div id= "chore-tile-<%= chore.id %>" class="row chore-tile">
+  <div class="col-6 ">
+    <span><%= chore.name %></span>
   </div>
   <div class="col-2">
-    <%= chore.last_performed.strftime("%_m/%_d/%Y") %>
+    <span><%= chore.last_performed.strftime("%_m/%_d/%Y") %></span>
   </div>
-  <div class="col-2">
-    <%= link_to "Mark Complete", edit_chore_path(chore.id, chore: { last_performed: Date.today }), { remote:true, class: "btn btn-secondary" } %>
-  </div>
-  <div class="col-1">
-    <%= link_to "Details", chore_meta_path(chore.id), class: "btn btn-secondary" %>
+  <div class="col-3 btn-group" role="group">
+    <%= link_to glyph(:ok), edit_chore_path(chore.id, chore: { last_performed: Date.today }), { remote:true, class: "btn btn-secondary btn-xs" } %>
+    <%= link_to glyph(:remove), dismiss_chore_path(chore.id), { remote: true, class:"btn btn-secondary btn-xs" } %>
+    <%= link_to glyph(:pencil), chore_meta_path(chore.id), class: 'btn btn-secondary btn-xs' %>
   </div>
 </div>
